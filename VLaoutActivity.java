@@ -79,19 +79,11 @@ public class VLaoutActivity extends AppCompatActivity {
 
         // 公共属性
         floatLayoutHelper.setItemCount(1);// 设置布局里Item个数
-        // 从设置Item数目的源码可以看出，一个FixLayoutHelper只能设置一个
-//        @Override
-//        public void setItemCount(int itemCount) {
-//            if (itemCount > 0) {
-//                super.setItemCount(1);
-//            } else {
-//                super.setItemCount(0);
-//            }
-//        }
+
         floatLayoutHelper.setPadding(20, 20, 20, 20);// 设置LayoutHelper的子元素相对LayoutHelper边缘的距离
         floatLayoutHelper.setMargin(20, 20, 20, 20);// 设置LayoutHelper边缘相对父控件（即RecyclerView）的距离
-        floatLayoutHelper.setBgColor(Color.GRAY);// 设置背景颜色
-        floatLayoutHelper.setAspectRatio(6);// 设置设置布局内每行布局的宽与高的比
+        floatLayoutHelper.setBgColor(Color.GRAY);
+        floatLayoutHelper.setAspectRatio(6);
 
         VLayoutFloatLayoutAdapter vLayoutFloatLayoutAdapter = new VLayoutFloatLayoutAdapter(floatLayoutHelper);
         VLayoutSingleLayoutAdapter vLayoutSingleLayoutAdapter = new VLayoutSingleLayoutAdapter(singleLayoutHelper);
@@ -99,7 +91,7 @@ public class VLaoutActivity extends AppCompatActivity {
 
 
         DelegateAdapter adapter = new DelegateAdapter(layoutManager, true);
-        
+
         adapter.addAdapter(vLayoutGridLayoutAdapter);
         adapter.addAdapter(vLayoutSingleLayoutAdapter);
         adapter.addAdapter(vLayoutFloatLayoutAdapter);
