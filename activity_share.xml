@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ShareActivity">
+
+    <Button
+        android:id="@+id/weibo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微博分享"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/share_text_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="文本"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/share_img_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="图片"
+        app:layout_constraintLeft_toRightOf="@id/share_text_cb"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        app:layout_constraintTop_toBottomOf="@id/share_img_cb"
+        android:id="@+id/share_url_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网页"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/share_multi_image_cb"
+        app:layout_constraintLeft_toRightOf="@id/share_url_cb"
+        app:layout_constraintTop_toBottomOf="@id/share_img_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="多图" />
+
+    <CheckBox
+        app:layout_constraintTop_toBottomOf="@id/share_img_cb"
+        app:layout_constraintLeft_toRightOf="@id/share_multi_image_cb"
+        android:id="@+id/share_video_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="视频" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/share_url_cb">
+
+        <RadioButton
+            android:id="@+id/share_client_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="只通过客户端" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
